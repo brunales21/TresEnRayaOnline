@@ -11,6 +11,8 @@ public class Client {
     private Scanner sc = new Scanner(System.in);
     private boolean turno;
     private String symbol;
+    private boolean isWinner = false;
+    private boolean seguirJugando;
 
     public Client(String hostName, int port) {
         this.hostName = hostName;
@@ -51,7 +53,13 @@ public class Client {
         }
     }
 
+    public boolean isWinner() {
+        return isWinner;
+    }
 
+    public void setWinner(boolean winner) {
+        isWinner = winner;
+    }
 
     public static void main(String[] args) {
         Client c = new Client("localhost", 23);
@@ -116,5 +124,13 @@ public class Client {
 
     public void setSymbol(String symbol) {
         this.symbol = symbol;
+    }
+
+    public boolean isSeguirJugando() {
+        return seguirJugando;
+    }
+
+    public void setSeguirJugando(boolean seguirJugando) {
+        this.seguirJugando = seguirJugando;
     }
 }
